@@ -1,8 +1,47 @@
 <html>
     <head><title>RockPaperScissor</title></head>
     <body>
-        <scrip>
-            
-        </scrip>
+        <h1>++++---Rock Paper Scissor Game---++++</h1>
+        <h2>Enter your choice in the prompt window.</h2>
+        <h2>Use cntrl+shift+j to open console to see the result.</h2>
+        <script>
+            let choice = ['rock','paper','scissor'];
+
+           computerPlay= ()=>{ return choice[Math.ceil(Math.random()*3)-1]; };
+
+            function play(playerSelection,computerSelection)
+            {
+                playerSelection = playerSelection.toLowerCase();
+                computerSelection = computerSelection.toLowerCase();
+
+                if(playerSelection === 'rock' && computerSelection === 'paper')
+                console.log(`Computer chose ${computerSelection}! You lost!`);
+                else if(playerSelection === 'rock' && computerSelection === 'scissor')
+                console.log(`Computer chose ${computerSelection}! You won!`);
+                if(playerSelection === 'rock' && computerSelection ==='rock')
+                console.log(`Computer chose ${computerSelection}! It's a draw!`);
+
+                else if(playerSelection === 'paper' && computerSelection === 'paper')
+                console.log(`Computer chose ${computerSelection}! It's a draw!`);
+                else if(playerSelection === 'paper' && computerSelection === 'scissor')
+                console.log(`Computer chose ${computerSelection}! You lost!`);
+                else if(playerSelection === 'paper' && computerSelection ==='Rock')
+                console.log(`Computer chose ${computerSelection}! You won!`);
+                
+
+                else if(playerSelection === 'scissor' && computerSelection === 'paper')
+                console.log(`Computer chose ${computerSelection}! You won!`);
+                else if(playerSelection === 'scissor' && computerSelection === 'rock')
+                console.log(`Computer chose ${computerSelection}! You lost!`);
+                else if(playerSelection === 'scissor' && computerSelection ==='scissor')
+                console.log(`Computer chose ${computerSelection}! It's a draw!`);
+                
+            }
+
+                let playerSelection = prompt("Enter your choice:");
+                let computerSelection = computerPlay();
+
+                play(playerSelection,computerSelection);
+        </script>
     </body>
 </html>
